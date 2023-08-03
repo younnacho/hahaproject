@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 @RequiredArgsConstructor
 public class QuestionController {
 
-    private final QuestionService questionService;
+    private final QuestionService qr;
 
 
 
