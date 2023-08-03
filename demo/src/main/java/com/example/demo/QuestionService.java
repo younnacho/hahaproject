@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class QuestionService {
+public class QuestionService2 {
 
     private final QuestionRepository questionRepository;
 
