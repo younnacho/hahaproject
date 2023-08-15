@@ -19,6 +19,7 @@
         placeholder="Enter your id"
         prepend-inner-icon="mdi-email-outline"
         variant="outlined"
+        v-model="memberid"
       ></v-text-field>
 
       <div
@@ -44,11 +45,13 @@
         prepend-inner-icon="mdi-lock-outline"
         variant="outlined"
         @click:append-inner="visible = !visible"
+        v-model="memberpw"
       ></v-text-field>
 
-      <v-btn block class="mb-8" color="blue" size="large" variant="tonal">
+      <v-btn block class="mb-8" color="blue" size="large" variant="tonal" @click="login">
         Log In
       </v-btn>
+
 
       <v-card-text class="text-center">
         <a
@@ -63,10 +66,42 @@
     </v-card>
   </div>
 </template>
+
 <script>
+import axios from 'axios';
+
 export default {
   data: () => ({
     visible: false,
+    memberid: '',
+    memberpw: '',
   }),
+
+  methods: {
+    async login() {
+      try {
+        axios.defaults.withCredentials = true;
+
+        const requestBody = {
+          MemberId: this.memberid,
+          MemberPw: this.memberpw,
+        };
+
+        console.log(this.memberid);
+        console.log(this.memberpw);
+
+        const response = await axios.post('http://localhost:8080/member/login', requestBody)
+        .then(res => {
+          console.log("로그인 성공~!~!");
+          console.log(res);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+      } catch (error) {
+        console.error('An error occurred:', error);
+      }
+    },
+  },
 };
 </script>
