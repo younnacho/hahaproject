@@ -1,4 +1,4 @@
-package com.wonfit.dev.wonfit.entity.dto;
+package com.wonfit.dev.wonfit.member.member.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

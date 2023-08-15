@@ -1,4 +1,4 @@
-package com.wonfit.dev.wonfit.entity.dto;
+package com.wonfit.dev.wonfit.member.member.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,6 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class MemberLoginRequest {
-    private String employName;
-    private String password;
+    private String MemberId;
+    private String MemberPw;
 }

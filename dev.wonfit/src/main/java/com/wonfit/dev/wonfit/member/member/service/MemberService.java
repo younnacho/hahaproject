@@ -1,11 +1,11 @@
-package com.wonfit.dev.wonfit.service;
+package com.wonfit.dev.wonfit.member.member.service;
 
 
-import com.wonfit.dev.wonfit.entity.Member;
-import com.wonfit.dev.wonfit.entity.dto.MemberDto;
-import com.wonfit.dev.wonfit.entity.dto.MemberRegisterRequest;
-import com.wonfit.dev.wonfit.repository.MemberRepository;
-import com.wonfit.dev.wonfit.util.JwtUtil;
+import com.wonfit.dev.wonfit.member.member.domain.JwtUtil;
+import com.wonfit.dev.wonfit.member.member.domain.Member;
+import com.wonfit.dev.wonfit.member.member.domain.MemberRepository;
+import com.wonfit.dev.wonfit.member.member.dto.MemberDto;
+import com.wonfit.dev.wonfit.member.member.dto.MemberRegisterRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,23 +21,23 @@ public class MemberService {
     private final long expireTimeMs = 1000 * 60 * 60 * 24 * 7; // 토큰 7일
 
     public MemberDto register(MemberRegisterRequest request) {
-        memberRepository.findByEmployName(request.getEmployName())
+        memberRepository.findByMemberId(request.getMemberId())
                 .ifPresent(member -> {
                     throw new RuntimeException();
                 });
 
-        Member saveMember = memberRepository.save(request.toEntity(bCryptPasswordEncoder.encode(request.getPassword())));
+        Member saveMember = memberRepository.save(request.toEntity(bCryptPasswordEncoder.encode(request.getMemberPw())));
         return MemberDto.fromEntity(saveMember);
     }
 
-    public String login(String employName, String password) {
-        Member member = memberRepository.findByEmployName(employName)
+    public String login(String memberId, String memberPw) {
+        Member member = memberRepository.findByMemberId(memberId)
                 .orElseThrow(() -> new RuntimeException("가입되지 않은 사원입니다."));
 
-        if (!bCryptPasswordEncoder.matches(password, member.getPassword())) {
+        if (!bCryptPasswordEncoder.matches(memberPw, member.getMemberPw())) {
             throw new RuntimeException("비밀번호가 일치하지 않습니다.");
         }
 
-        return JwtUtil.createToken(employName, expireTimeMs);
+        return JwtUtil.createToken(memberId, expireTimeMs);
     }
 }

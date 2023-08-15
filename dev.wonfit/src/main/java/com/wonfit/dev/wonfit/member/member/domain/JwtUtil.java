@@ -1,4 +1,4 @@
-package com.wonfit.dev.wonfit.util;
+package com.wonfit.dev.wonfit.member.member.domain;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -11,9 +11,9 @@ import java.util.Date;
 public class JwtUtil {
     private static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    public static String createToken(String employName, long expireTimeMs) {
+    public static String createToken(String memberId, long expireTimeMs) {
         Claims claims = Jwts.claims();
-        claims.put("employName", employName);
+        claims.put("memberId", memberId);
 
         return Jwts.builder()
                 .setClaims(claims)
