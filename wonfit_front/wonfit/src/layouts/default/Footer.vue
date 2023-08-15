@@ -11,8 +11,8 @@
       >
         {{ link }}
       </v-btn>
-      <v-col class="text-center mt-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      <v-col class="text-center mt-2" cols="12">
+        {{ new Date().getFullYear() }} — <strong>WONFIT</strong>
       </v-col>
     </v-row>
   </v-footer>
@@ -20,9 +20,7 @@
 <script>
 export default {
   data: () => ({
-    links: ["Home", "About Us", "Team", "Github", "Contact Us"],
+    links: ["Home", "About Us", "Team", "github", "Contact Us"],
   }),
 };
 </script>
-
-<style></style>
