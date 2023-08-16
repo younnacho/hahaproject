@@ -14,6 +14,7 @@ public class MemberInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+<<<<<<< Updated upstream
     @OneToOne
     @JoinColumn(name = "member_id") // 외래 키를 사용하는 주인인 Member에 대한 참조
     private Member member;
@@ -41,5 +42,8 @@ public class MemberInfo {
 
     @Column(name = "job")
     private String job;
+=======
+
+>>>>>>> Stashed changes
 
 }
