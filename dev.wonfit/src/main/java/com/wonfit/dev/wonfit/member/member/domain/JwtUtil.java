@@ -11,9 +11,9 @@ import java.util.Date;
 public class JwtUtil {
     private static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    public static String createToken(String memberId, long expireTimeMs) {
+    public static String createToken(String memberLoginId, long expireTimeMs) {
         Claims claims = Jwts.claims();
-        claims.put("memberId", memberId);
+        claims.put("memberLoginId", memberLoginId);
 
         return Jwts.builder()
                 .setClaims(claims)

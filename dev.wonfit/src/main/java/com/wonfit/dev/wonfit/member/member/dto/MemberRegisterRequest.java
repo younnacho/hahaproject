@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Builder
 public class MemberRegisterRequest {
-    private String memberId; // 회원 아이디
+    private String memberLoginId; // 회원 아이디
     private String memberPw; // 회원 패스워드
     private String memberEmail; // 회원 이메일
     private String memberName; // 회원 이름
@@ -20,7 +20,7 @@ public class MemberRegisterRequest {
 
     public Member toEntity(String password) {
         return Member.builder()
-                .memberId(memberId).memberPw(password)
+                .memberLoginId(memberLoginId).memberPw(password)
                 .memberEmail(memberEmail)
                 .memberName(memberName)
                 .status(status)

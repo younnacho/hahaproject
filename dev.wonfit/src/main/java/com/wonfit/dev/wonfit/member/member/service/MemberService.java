@@ -21,7 +21,7 @@ public class MemberService {
     private final long expireTimeMs = 1000 * 60 * 60 * 24 * 7; // 토큰 7일
 
     public MemberDto register(MemberRegisterRequest request) {
-        memberRepository.findByMemberId(request.getMemberId())
+        memberRepository.findByMemberLoginId(request.getMemberLoginId())
                 .ifPresent(member -> {
                     throw new RuntimeException();
                 });
@@ -31,7 +31,7 @@ public class MemberService {
     }
 
     public String login(String memberId, String memberPw) {
-        Member member = memberRepository.findByMemberId(memberId)
+        Member member = memberRepository.findByMemberLoginId(memberId)
                 .orElseThrow(() -> new RuntimeException("가입되지 않은 사원입니다."));
 
         if (!bCryptPasswordEncoder.matches(memberPw, member.getMemberPw())) {

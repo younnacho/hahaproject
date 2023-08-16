@@ -12,7 +12,7 @@ import lombok.Getter;
 public class MemberDto {
 
     private Long id;
-    private String memberId; // 회원 아이디
+    private String memberLoginId; // 회원 아이디
     private String memberPw; // 회원 패스워드
     private String memberEmail; // 회원 이메일
     private String memberName; // 회원 이름
@@ -20,7 +20,7 @@ public class MemberDto {
 
     public static MemberDto fromEntity(Member member)  {
         MemberDto memberDto = MemberDto.builder()
-                .memberId(member.getMemberId())
+                .memberLoginId(member.getMemberLoginId())
                 .memberPw(member.getMemberPw())
                 .memberEmail(member.getMemberEmail())
                 .memberName(member.getMemberName())
