@@ -33,6 +33,13 @@ const routes = [
         component: () =>
           import(/* webpackChunkName: "recommend" */ "@/views/Recommend.vue"),
       },
+
+      {
+        path: "managerpage",
+        name: "managerpage",
+        component: () =>
+          import(/* webpackChunkName: "recommend" */ "@/views/ManagerPage.vue"),
+      },
     ],
   },
 ];
