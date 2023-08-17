@@ -23,7 +23,6 @@ public class SecurityConfig{
                 .authorizeRequests(auth -> auth.antMatchers("/member/**").permitAll().anyRequest().authenticated());
         return http.build();
     }
-
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
