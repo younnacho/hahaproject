@@ -41,11 +41,8 @@ public class Member {
     @OneToOne
     private MemberInfo memberInfo;
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberLoginLog> memberLoginLogs = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member")
-    private List<MemberSearchLog> memberSearchLogs = new ArrayList<>();
+
 
 
 // ID: 영문/숫자 10자 이하

@@ -34,9 +34,6 @@ public class Product {
     @Column(name ="sub_product_info")
     private String subProductInfo; // 상품 간단 설명
 
-    @OneToMany(mappedBy = "product")
-    private List<MemberLiked> memberLiked = new ArrayList<>();
-
 
 
 }
