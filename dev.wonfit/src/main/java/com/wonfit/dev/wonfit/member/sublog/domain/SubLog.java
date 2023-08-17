@@ -29,10 +29,7 @@ public class SubLog {
     @Column(name = "maturity")
     private LocalDateTime maturity; // 만료 날짜
 
-    @Column(name = "savings_amount", nullable = true)
-    private double savingsAmount; // 정기 적금 납입 금액
-
-    @Column(name = "subscription_amount")
+    @Column(name = "subscription_deposit")
     private double subscriptionAmount; // 금융 상품 가입 시 예금 금액
 
     @Column(name = "interest_rate")
@@ -41,4 +38,7 @@ public class SubLog {
     @Enumerated(EnumType.STRING)
     @Column(name = "sub_status")
     private SubStatus subStatus; // 가입 상태(가입 중, 만료, 해지 등)
+
+    @Column(name = "monthly_charge" ,nullable = true)
+    private int monthlyCharge; //월 납입 금액
 }

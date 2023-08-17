@@ -26,13 +26,7 @@ public class MemberSearchLog {
     private String searchWord; // 검색어
 
     @Column(name = "search_date")
-    private String searchDate; // 검색 날짜
-
-    @Column(name = "search_time")
-    private LocalDateTime searchTime; // 검색 시간
-
-    @Column(name = "search_result_count", length = 50)
-    private int searchResultCount; // 검색 결과 개수
+    private LocalDateTime searchDate; // 검색 날짜 및 시간
 
     @Column(name = "search_url")
     private String searchUrl; // 검색 결과 URL
