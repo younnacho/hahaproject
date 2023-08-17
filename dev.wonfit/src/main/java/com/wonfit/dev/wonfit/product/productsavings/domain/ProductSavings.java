@@ -26,7 +26,7 @@ public class ProductSavings {
     private String productTarget; // 가입 대상
 
     @Column(name = "product_max_deposit")
-    private double productMaxDeposit; // 최대 월 납입 금액
+    private int productMaxDeposit; // 최대 월 납입 금액
 
     @Column(name = "product_savings_period")
     private String productSavingsPeriod; // 가입 기간
@@ -37,8 +37,8 @@ public class ProductSavings {
     @Column(name = "preferential_interest_rate")
     private double preferentialInterestRate; // 우대금리
 
-    @Column(name = "product_savings_desc")
-    private String productSavingsDesc; // 상품 설명
+    @Column(name = "product_savings_info")
+    private String productSavingsInfo; // 상품 설명
 
     @Column(name = "status")
     private String status; // 상태

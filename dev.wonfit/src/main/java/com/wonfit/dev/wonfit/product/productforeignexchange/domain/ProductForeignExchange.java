@@ -26,17 +26,17 @@ public class ProductForeignExchange {
     @Column(name = "product_target")
     private String productTarget; // 가입 대상
 
-    @Column(name = "product_type")
+    @Column(name = "conversion_rate_info")
     private double conversionRateInfo; // 환율 정보
 
-    @Column(name = "product_currency")
+    @Column(name = "deposit_currency")
     private String depositCurrency; // 예치 통화
 
     @Column(name = "product_foreign_exchange_period")
     private String productForeignExchangePeriod; // 가입 기간
 
-    @Column(name = "product_savings_desc")
-    private String productSavingsDesc; // 상품 설명
+    @Column(name = "product_foreign_exchange_info")
+    private String productForeignExchangeInfo; // 상품 설명
 
     @Column(name = "status")
     private String status; // 상태

@@ -30,7 +30,7 @@ public class SubLog {
     private LocalDateTime maturity; // 만료 날짜
 
     @Column(name = "subscription_deposit")
-    private double subscriptionAmount; // 금융 상품 가입 시 예금 금액
+    private int subscriptionDeposit; // 금융 상품 가입 시 예금 금액
 
     @Column(name = "interest_rate")
     private double interestRate; // 금융 상품 가입 시 금리

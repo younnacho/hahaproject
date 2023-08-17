@@ -21,7 +21,7 @@ public class ProductDeposit {
     private Product product;
 
     @Column(name = "product_deposit_name")
-    private String productDepositName;
+    private String productDepositName; //멘토님 한테 물어보기
 
     @Column(name = "product_min_deposit")
     private int productMinDeposit; // 최소 가입금액
@@ -35,8 +35,8 @@ public class ProductDeposit {
     @Column(name = "basic_interest_rate")
     private double basicInterestRate; // 기본 금리
 
-    @Column(name = "product_deposit_desc")
-    private String productDepositDesc; // 상품 설명
+    @Column(name = "product_deposit_info")
+    private String productDepositInfo; // 상품 설명
 
 
 }

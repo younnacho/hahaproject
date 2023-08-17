@@ -1,6 +1,7 @@
 package com.wonfit.dev.wonfit.product.product.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Cleanup;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -30,6 +31,9 @@ public class Product {
 
     @Column(name ="sub_product_info")
     private String subProductInfo; // 상품 간단 설명
+
+    @Column(name = "liked_count")
+    private short likedCount;
 
 
 
