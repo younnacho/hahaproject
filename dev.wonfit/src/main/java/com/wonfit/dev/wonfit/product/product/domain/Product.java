@@ -1,11 +1,16 @@
 package com.wonfit.dev.wonfit.product.product.domain;
 
 import com.wonfit.dev.wonfit.member.memberliked.domain.MemberLiked;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Getter
 @Table(name = "product")
@@ -29,9 +34,9 @@ public class Product {
     @Column(name ="sub_product_info")
     private String subProductInfo; // 상품 간단 설명
 
-    @ManyToOne
-    @JoinColumn(name = "member_liked_id")
-    private MemberLiked memberLiked;
+    @OneToMany(mappedBy = "product")
+    private List<MemberLiked> memberLiked = new ArrayList<>();
+
 
 
 }

@@ -3,7 +3,6 @@ package com.wonfit.dev.wonfit.member.memberliked.domain;
 import com.wonfit.dev.wonfit.member.member.domain.Member;
 import com.wonfit.dev.wonfit.product.product.domain.Product;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
