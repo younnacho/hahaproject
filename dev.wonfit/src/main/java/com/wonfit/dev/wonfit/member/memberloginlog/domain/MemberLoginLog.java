@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
+@Table(name = "member_login_log")
 public class MemberLoginLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

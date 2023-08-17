@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Setter
+@Table(name = "product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,17 +20,17 @@ public class Product {
     @Column(name ="interest_rate")
     private double interestRate;
 
-    @Column(name ="attribute")
-    private String attribute;
+    @Column(name ="product_type")
+    private String productType; // 상품 타입(안정형, 중립형, 공격형)
 
     @Column(name ="sorting_options")
-    private String sortingOptions;
+    private String sortingOptions; // 정렬 옵션(인기순, 출시순, 금리순)
 
     @Column(name ="sub_product_info")
-    private String subProductInfo;
+    private String subProductInfo; // 상품 간단 설명
 
     @ManyToOne
-    @JoinColumn(name = "memberLiked_Id")
+    @JoinColumn(name = "member_liked_id")
     private MemberLiked memberLiked;
 
 

@@ -11,11 +11,8 @@ import net.bytebuddy.asm.Advice;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Getter
-@Setter
 @Table(name = "member_sub_log")
 public class MemberSubLog {
     @Id
@@ -23,8 +20,8 @@ public class MemberSubLog {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "member_login_id")
-    private Member memberLoginId;
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -36,10 +33,8 @@ public class MemberSubLog {
     @Column(name = "maturity")
     private LocalDateTime maturity; // 만료 날짜
 
-//    @Column(name = "validity_period")
-//    private int validityPeriod; // 유효기간
-
-//    private double amount; // 정기적금 납입 금액
+    @Column(name = "savings_amount", nullable = true)
+    private double savingsAmount; // 정기 적금 납입 금액
 
     @Column(name = "subscription_amount")
     private double subscriptionAmount; // 금융 상품 가입 시 예금 금액
@@ -47,6 +42,7 @@ public class MemberSubLog {
     @Column(name = "interest_rate")
     private double interestRate; // 금융 상품 가입 시 금리
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "sub_status")
-    private boolean subStatus; // 가입 상태(가입 중, 만료, 해지 등)
+    private SubStatus subStatus; // 가입 상태(가입 중, 만료, 해지 등)
 }

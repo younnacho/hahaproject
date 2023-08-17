@@ -9,11 +9,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @Getter
-@Setter
 @Table (name = "member_search_log")
 public class MemberSearchLog {
     @Id
@@ -21,7 +19,7 @@ public class MemberSearchLog {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "member_login_id", referencedColumnName = "id")
+    @JoinColumn(name = "member_id")
     private Member member;
 
     @Column(name = "search_word")
