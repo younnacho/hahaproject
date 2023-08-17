@@ -38,7 +38,4 @@ public class ProductForeignExchange {
     @Column(name = "product_foreign_exchange_info")
     private String productForeignExchangeInfo; // 상품 설명
 
-    @Column(name = "status")
-    private String status; // 상태
-
 }
