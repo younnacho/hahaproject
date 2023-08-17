@@ -23,13 +23,8 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-<<<<<<< Updated upstream
-    @Column(name = "member_login_id")
-    private String memberLoginId; // 회원 아이디
-=======
     @Column(name = "member_login_id", length = 10, nullable = false)
     private String memberLoginId; // 회원 아이디 (10자 이하)
->>>>>>> Stashed changes
 
     @Column(name = "member_pw", length = 20, nullable = false)
     private String memberPw; // 회원 패스워드 (20자 이하)
