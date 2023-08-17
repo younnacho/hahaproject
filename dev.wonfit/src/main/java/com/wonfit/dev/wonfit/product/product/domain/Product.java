@@ -1,13 +1,10 @@
 package com.wonfit.dev.wonfit.product.product.domain;
 
-import com.wonfit.dev.wonfit.member.memberliked.domain.MemberLiked;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor

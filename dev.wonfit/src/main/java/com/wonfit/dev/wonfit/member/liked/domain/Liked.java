@@ -1,4 +1,4 @@
-package com.wonfit.dev.wonfit.member.memberliked.domain;
+package com.wonfit.dev.wonfit.member.liked.domain;
 
 import com.wonfit.dev.wonfit.member.member.domain.Member;
 import com.wonfit.dev.wonfit.product.product.domain.Product;
@@ -8,8 +8,8 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@Table(name = "member_liked")
-public class MemberLiked {
+@Table(name = "liked")
+public class Liked {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

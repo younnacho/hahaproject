@@ -1,20 +1,16 @@
-package com.wonfit.dev.wonfit.member.membersublog.domain;
+package com.wonfit.dev.wonfit.member.sublog.domain;
 
 import com.wonfit.dev.wonfit.member.member.domain.Member;
 import com.wonfit.dev.wonfit.product.product.domain.Product;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import net.bytebuddy.asm.Advice;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Table(name = "member_sub_log")
-public class MemberSubLog {
+@Table(name = "sub_log")
+public class SubLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

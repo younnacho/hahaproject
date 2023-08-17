@@ -1,4 +1,4 @@
-package com.wonfit.dev.wonfit.member.membersublog.domain;
+package com.wonfit.dev.wonfit.member.sublog.domain;
 
 public enum SubStatus {
     SUBSCRIBING, // 가입 중

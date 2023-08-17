@@ -38,8 +38,8 @@ public class Member {
     @Column(name = "member_status")
     private boolean status; // 회원 상태(정상, 탈퇴) 휴면 추가할건지?
 
-    @OneToOne
-    private MemberInfo memberInfo;
+//    @OneToOne
+//    private MemberInfo memberInfo;
 
 
 
